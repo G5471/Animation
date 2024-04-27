@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        .Yellow {
+            width: 420px;
+            height: 420px;
+            background-color: yellow;
+            position: relative;
+            margin-top: 5px;
+            border-radius: 2%;
+        }
+
+        #Red {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="Move()">Click me!</button>
+    <div class="Yellow">
+        <div id="Red"></div>
+    </div>
+</body>
+<script>
+    function Move() {
+        var redElement = document.getElementById("Red");
+        var position = 0;
+        var Animation1 = setInterval(animate, 5);
+        function animate() {
+            if (position == 370) {
+                clearInterval(Animation1);
+            } else {
+                position++;
+                redElement.style.top = position + "px";
+                redElement.style.left = position + "px";
+            }
+        }
+    }
+</script>
+
+</html>
